@@ -41,6 +41,10 @@
     border-radius: 20px;
 }
 
+::placeholder {
+    color: #999;
+  }
+
 .sidebar__searchContainer > .MuiSvgIcon-root{
     color: gray;
     padding: 10px;

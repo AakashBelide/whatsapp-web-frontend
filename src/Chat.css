@@ -37,8 +37,7 @@
     background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
     background-repeat: repeat;
     background-position: center;
-    padding: 30px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .chat__message{
@@ -46,9 +45,9 @@
     font-size: 16px;
     padding: 10px;
     width: fit-content;
-    border-radius: 10px;
+    border-radius: 7.5px;
     background-color: #ffffff;
-    margin-bottom: 30px;
+    margin: 30px;
 }
 
 .chat__receiver{
@@ -83,8 +82,8 @@
 
 .chat__footer > form > input{
     flex: 1;
-    border-radius: 30px;
-    padding: 10px;
+    border-radius: 21px;
+    padding: 12px;
     border: none;
     outline-width: 0;
 }
@@ -96,4 +95,12 @@
 .chat__footer > .MuiSvgIcon-root{
     padding: 10px;
     color: gray;
+}
+
+.emoji-mart-scroll{
+    height: 70px;
+}
+
+.emoji-mart-preview{
+    display: none;
 }

@@ -1,0 +1,16 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    flex: 0.7;
+    align-items: center;
+}
+
+.home > img{
+    object-fit: contain;
+    height: 400px;
+    margin: 50px;
+}
+
+.home > h1{
+    margin-bottom: 30px;
+}

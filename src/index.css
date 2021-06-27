@@ -2,8 +2,23 @@
   margin: 0;
 }
 
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.25); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+
 body {
   margin: 0;
+  background-color: #dadbd3;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

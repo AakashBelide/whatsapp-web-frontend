@@ -41,6 +41,13 @@ function SidebarChat({ id, name, addNewChat }) {
             channel.unsubscribe();
         };
     }, [messages])
+    /* if(messages[messages.length - 1].roomid == id ){
+        var last_msg = messages[messages.length - 1].name + ": " + messages[messages.length - 1].message;
+        console.log("YES", messages[messages.length - 1].roomid, id, last_msg);
+    }else{
+        var last_msg = messages.length-1 > 0 ? (messages[messages.length - 1].name + ": " + messages[messages.length - 1].message) : ("No messages yet.");
+        console.log("NO", messages[messages.length - 1].roomid, id, last_msg);
+    } */
 
     return !addNewChat ? (
         <Link to={`/rooms/${id}`}>
@@ -48,7 +55,8 @@ function SidebarChat({ id, name, addNewChat }) {
             <Avatar src={`https://avatars.dicebear.com/api/human/${id}.svg`}/>
             <div className="sidebarChat__info">
                 <h2>{name}</h2>
-                <p>{messages.length-1 > 0 ? (messages[messages.length - 1].name + ": " + messages[messages.length - 1].message) : ("No messages yet.")}</p>
+                <p>Last message...</p>
+                {/* <p>{last_msg}</p> */}
             </div>            
         </div>
         </Link>
