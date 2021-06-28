@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
+//import { useEffect, useState } from 'react';
 import './SidebarChat.css';
 import { Avatar } from "@material-ui/core";
 import axios from "./axios";
-import Pusher from 'pusher-js';
+//import Pusher from 'pusher-js';
 import { Link } from "react-router-dom";
 
 function SidebarChat({ id, name, addNewChat }) {
@@ -13,10 +14,12 @@ function SidebarChat({ id, name, addNewChat }) {
             axios.post('/rooms/new', {
                 name: roomName
             });
+        } else{
+            alert("Invalid room name. Kindly enter a valid room name.");
         }
     };
 
-    const [messages, setMessages] = useState([]);
+    /*const [messages, setMessages] = useState([]);
 
     useEffect (() => {
         if(id){
@@ -41,18 +44,18 @@ function SidebarChat({ id, name, addNewChat }) {
             channel.unsubscribe();
         };
     }, [messages])
-    /* if(messages[messages.length - 1].roomid == id ){
+    if(messages[messages.length - 1].roomid == id ){
         var last_msg = messages[messages.length - 1].name + ": " + messages[messages.length - 1].message;
-        console.log("YES", messages[messages.length - 1].roomid, id, last_msg);
+        //console.log("YES", messages[messages.length - 1].roomid, id, last_msg);
     }else{
         var last_msg = messages.length-1 > 0 ? (messages[messages.length - 1].name + ": " + messages[messages.length - 1].message) : ("No messages yet.");
-        console.log("NO", messages[messages.length - 1].roomid, id, last_msg);
+        //console.log("NO", messages[messages.length - 1].roomid, id, last_msg);
     } */
 
     return !addNewChat ? (
         <Link to={`/rooms/${id}`}>
             <div className="sidebarChat">
-            <Avatar src={`https://avatars.dicebear.com/api/human/${id}.svg`}/>
+            <Avatar src={`https://avatars.dicebear.com/api/human/${id}.svg`} style={{backgroundColor: "#dfe4e6"}}/>
             <div className="sidebarChat__info">
                 <h2>{name}</h2>
                 <p>Last message...</p>

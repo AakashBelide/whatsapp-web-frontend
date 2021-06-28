@@ -31,6 +31,7 @@ function Chat() {
         });
 
         setInput('');
+        setShow(!show);
     };
 
     useEffect (() => {
@@ -41,7 +42,7 @@ function Chat() {
             });
             axios.get('/messages/' + roomId).then(response => {
                 setMessages(response.data);
-                console.log(messages.length-1 > 0 ? (new Date(messages[messages.length-1].timestamp).toUTCString(), messages.length-1) : ("No messages yet."));
+                //console.log(messages.length-1 > 0 ? (new Date(messages[messages.length-1].timestamp).toUTCString(), messages.length-1) : ("No messages yet."));
             });
         }// eslint-disable-next-line
     }, [roomId]);
@@ -67,7 +68,7 @@ function Chat() {
     return (
         <div className="chat">
             <div className="chat__header">
-                <Avatar src={`https://avatars.dicebear.com/api/human/${roomId}.svg`}/>
+                <Avatar src={`https://avatars.dicebear.com/api/human/${roomId}.svg`} style={{backgroundColor: "#dfe4e6"}}/>
                 <div className="chat__headerInfo">
                     <h3>{roomName}</h3>
                     <p>Last seen {messages.length-1 > 0 ? (new Date(messages[messages.length-1].timestamp).toUTCString()) : ("No messages yet.")}</p>

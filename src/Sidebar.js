@@ -53,36 +53,48 @@ function Sidebar() {
     //console.log(rooms);
     
     return (
-        <div className="sidebar">
-            <div className="sidebar__header">
-                <Avatar  title="Profile" src={user?.photoURL} onClick={() => setShow(true)}/>
-                <User title="My Modal" onClose={() => setShow(false)} show={show}>
+        <div className="sidebar" id="sidebar">
+            {show ? 
+            (<User onClose={() => setShow(false)}>
+                <div className="user__img">
                     <img src={user.photoURL} alt={user.displayName}/>
-                    <p>{user.displayName}</p>
-                </User>
-                <div className="sidebar__headerRight">
-                    <IconButton title="Status">
-                        <DonutLargeIcon/>
-                    </IconButton>
-                    <IconButton title="New Room">
-                        <ChatIcon onClick={createChat}/>
-                    </IconButton>
-                    <IconButton title="Menu">
-                        <MoreVertIcon/>
-                    </IconButton>
                 </div>
-            </div>
-            <div className="sidebar__search">
-                <div className="sidebar__searchContainer">
-                    <SearchOutlined/>
-                    <input placeholder="Search or start new chat" type="text" />
+                <div className="user__name">
+                    <p>Your Name</p>
+                    <h4>{user.displayName}</h4>
                 </div>
-            </div>
-            <div className="sidebar__chats">
-                <SidebarChat addNewChat/>
-                {rooms.map(room => (
-                    <SidebarChat key={room._id} id={room._id} name={room.name}/>))}
-            </div>
+                <div className="user__name__info">
+                    <p>This name will be visible to your WhatsApp web clone contacts.</p>
+                </div>
+            </User>)
+            :(
+            <div>
+                <div className="sidebar__header">
+                    <Avatar title="Profile" src={user?.photoURL} onClick={() => setShow(true)}/>
+                    <div className="sidebar__headerRight">
+                        <IconButton title="Status">
+                            <DonutLargeIcon/>
+                        </IconButton>
+                        <IconButton title="New Room">
+                            <ChatIcon onClick={createChat}/>
+                        </IconButton>
+                        <IconButton title="Menu">
+                            <MoreVertIcon/>
+                        </IconButton>
+                    </div>
+                </div>
+                <div className="sidebar__search">
+                    <div className="sidebar__searchContainer">
+                        <SearchOutlined/>
+                        <input placeholder="Search or start new chat" type="text" size="45" />
+                    </div>
+                </div>
+                <div className="sidebar__chats">
+                    <SidebarChat addNewChat/>
+                    {rooms.map(room => (
+                        <SidebarChat key={room._id} id={room._id} name={room.name}/>))}
+                </div>
+            </div>)}
         </div>
     )
 }

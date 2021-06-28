@@ -16,7 +16,7 @@ function App() {
       {!user ? (
         <Login/>
       ): (
-        <div className="app__body">
+      <div className="app__body">
         <Router>
           <Switch>
             <Route path="/rooms/:roomId">

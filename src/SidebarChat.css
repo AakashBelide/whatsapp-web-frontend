@@ -11,6 +11,10 @@ a{
     color: black;
 }
 
+p{
+    color: gray;
+}
+
 .sidebarChat:hover{
     background-color: #ebebeb;
 }

@@ -24,6 +24,7 @@
 
 .chat__headerInfo > p{
     color: gray;
+    text-overflow: ellipsis;
 }
 
 .chat__headerRight{
@@ -34,9 +35,9 @@
 
 .chat__body{
     flex: 1;
-    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+    background-image: url('bg-chat.png');
     background-repeat: repeat;
-    background-position: center;
+    background-position: top;
     overflow-y: auto;
 }
 
@@ -48,6 +49,8 @@
     border-radius: 7.5px;
     background-color: #ffffff;
     margin: 30px;
+    box-shadow: 0 1px .5px rgba(0,0,0,.13);
+    color: black;
 }
 
 .chat__receiver{
@@ -98,7 +101,7 @@
 }
 
 .emoji-mart-scroll{
-    height: 70px;
+    height: 235px;
 }
 
 .emoji-mart-preview{
