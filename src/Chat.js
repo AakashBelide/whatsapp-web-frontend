@@ -23,15 +23,19 @@ function Chat() {
     const sendMessage = async(e) => {
         e.preventDefault();
 
-        await axios.post('/messages/new', {
-            message: input,
-            name: user.displayName,
-            timestamp: new Date(),
-            roomid: roomId
-        });
-
-        setInput('');
-        setShow(!show);
+        if(input !== ''){
+            await axios.post('/messages/new', {
+                message: input,
+                name: user.displayName,
+                timestamp: new Date(),
+                roomid: roomId
+            });
+    
+            setInput('');
+            if(show){
+                setShow(!show);
+            }
+        }
     };
 
     useEffect (() => {
